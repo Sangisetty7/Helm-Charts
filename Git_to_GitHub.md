@@ -1,16 +1,21 @@
+# Pushing Helm Charts using Git to GitHub
+
 **Step-1:**  
 Create and Package helm chart as shown below.
 ```
 helm create nginx     # nginx will be created.
 helm package nginx    # nginx will be packaged "nginx-0.1.0.tgz" .
 ```
+
 **Step-2:**  
 Log into Github and create a repository. I am choosing "helm_demo" as an example. Go to the created repository and copy the HTTPS Git link which you can find under code.
+
 **Step-3:**  
 Open your terminal and clone the copied repository "helm_demo" as shown below
 ```
 git clone https://github.com/<username>/helm_demo.git     #Modify the username.
 ```
+
 **Step-4:**  
 Now follow the below procedure
 ```
@@ -24,13 +29,27 @@ git add .                  # Adding the files to git.
 git commit -m 'commiting'  # Commiting the changes in the branch.
 git push origin gh-pages   # Pusing the changes to GitHub.
 ```
+
 **Step-5:** 
 Navigate to GitHub and Check whether the branch "gh-pages" have all the modifications done. Check the repository settings 
 
 **Step-6:**
 Now we will commit the changes of "gh-pages" branch to "master" branch. I am using terminal to do changes.
 ```
-helm repo add helm_demo  <repo adress>    # repo-address can be found at settings
+helm repo add helm_demo  <repo adress>    # repo-address can be found at repository settings, under gh
+cd helm_demo                              # change directory to helm_demo
+git checkout master                       # Switch branch to "master" from "gh-pages"
+cp -r ../nginx .                          # Now the nginx directory
+git add .                                 # Adding the files to git.
+git commit -m 'commiting'                 # Commiting the changes in the branch.
+git push origin master                    # Pusing the changes to GitHub.
+```
+
+**Step-7:**
+Deploying to Kubernetes using helm.
+```
+helm repo add helm_demo  <repo adress>    # repo-address can be found at repository settings, under gh
 helm search repo helm_demo                # You can find the helm charts 
-helm fetch <chart>                        # Using this you can fetch the charts and use for deployment purpose.
+helm fetch <chart>                        # Using this you can fetch the nginx helm chart.
+helm install nginx .                      # Installing the nginx 
 ```

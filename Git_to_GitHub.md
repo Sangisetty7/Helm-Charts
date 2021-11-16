@@ -1,8 +1,7 @@
-     **Step-1:**  Create and Package helm chart as shown below.
+**Step-1:**  Create and Package helm chart as shown below.
 ```
 helm create ingres 
 helm package ingres
-
 ```
 Step 1 Please log into github and create a new repository. The repo is came with a default branch but we need to create a child branch for package here i am taking 'gh-pages' as a branch name. now this repo have 2 brances
 

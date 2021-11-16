@@ -34,6 +34,3 @@ helm repo add helm_demo  <repo adress>    # repo-address can be found at setting
 helm search repo helm_demo                # You can find the helm charts 
 helm fetch <chart>                        # Using this you can fetch the charts and use for deployment purpose.
 ```
-
-
-

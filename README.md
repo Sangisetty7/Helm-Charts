@@ -1,3 +1,3 @@
 # Helm-Charts
-Pushing Helm charts to GitHub using git.
+Find How to push "helm charts" to "GitHub" using "git" in the file "Git-to-Github.md".
 

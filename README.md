@@ -1,3 +1,3 @@
 # Helm-Charts
-Find How to push "helm charts" to "GitHub" using "git" in the file "Git-to-Github.md".
+ Pushing helm_charts to GitHub using Git can be found in the file "Git_to_Github.md".
 
